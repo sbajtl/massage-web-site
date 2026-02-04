@@ -1,0 +1,27 @@
+{
+  "name": "venera-web",
+  "version": "1.0.0",
+  "description": "Venera Massage Center - Bilingual massage therapy website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.11",
+    "vite-plugin-checker": "^0.12.0"
+  },
+  "keywords": [
+    "massage",
+    "spa",
+    "wellness",
+    "croatia"
+  ],
+  "author": "",
+  "license": "MIT"
+}

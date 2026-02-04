@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/sasabajtl/venera-web status:*)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run preview:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
