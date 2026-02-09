@@ -39,18 +39,37 @@ export interface TranslationKeys {
     'services-title': string;
     'services-subtitle': string;
     'service-badge': string;
-    'service1-title': string;
-    'service1-desc': string;
-    'service2-title': string;
-    'service2-desc': string;
-    'service3-title': string;
-    'service3-desc': string;
-    'service4-title': string;
-    'service4-desc': string;
-    'service5-title': string;
-    'service5-desc': string;
-    'service6-title': string;
-    'service6-desc': string;
+    // Category titles
+    'category-classic-title': string;
+    'category-relax-title': string;
+    'category-anticellulite-title': string;
+    'category-energy-title': string;
+    // Classic Massage services
+    'service-back': string;
+    'service-legs': string;
+    'service-hands': string;
+    'service-head-face': string;
+    'service-full-body': string;
+    'service-feet-butter': string;
+    // Relax Massage services
+    'service-relax-back': string;
+    'service-relax-full': string;
+    'service-royal': string;
+    // Anti-cellulite Program services
+    'service-anticellulite': string;
+    'service-body-scrub': string;
+    'service-paraffin': string;
+    'service-cupping': string;
+    'service-lymphatic': string;
+    // Energy Massage services
+    'service-volcanic-back': string;
+    'service-volcanic-full': string;
+    'service-reflexology': string;
+    'service-aroma-back': string;
+    'service-aroma-full': string;
+    'service-shiatsu': string;
+    'service-raindrop': string;
+    'service-combo': string;
     'about-title': string;
     'about-text1': string;
     'about-text2': string;

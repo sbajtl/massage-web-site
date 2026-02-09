@@ -295,7 +295,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://unsplash.com/photos/FhDeYh4I3Nw/download?force=true') center/cover no-repeat;
+    background: url('/assets/images/venera-background.jpg') center/cover no-repeat;
     z-index: -2;
 }
 
@@ -322,7 +322,7 @@ body {
     font-weight: 500;
     margin-bottom: 10px;
     letter-spacing: 2px;
-    color: var(--sage-deep);
+    color: var(--text-white);
     line-height: 1.2;
 }
 
@@ -332,7 +332,7 @@ body {
     font-weight: 300;
     font-style: italic;
     margin-bottom: 30px;
-    color: var(--sage);
+    color: var(--text-white);
 }
 
 .hero-text {
@@ -538,6 +538,158 @@ section {
     margin-bottom: 20px;
 }
 
+/* ===== Service Categories ===== */
+.services-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service-category-card {
+    background: var(--text-white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(45, 58, 63, 0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(58, 125, 140, 0.08);
+}
+
+.service-category-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(45, 58, 63, 0.15);
+    border-color: rgba(58, 125, 140, 0.15);
+}
+
+/* Image Section */
+.category-bg {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-classic .category-bg {
+    background-image: url('/assets/images/classic-massage.jpg');
+}
+
+.card-relax .category-bg {
+    background-image: url('/assets/images/relax-massage.jpg');
+}
+
+.card-anticellulite .category-bg {
+    background-image: url('/assets/images/anticelulite-massage.jpg');
+}
+
+.card-energy .category-bg {
+    background-image: url('/assets/images/energy-massage.jpg');
+}
+
+.category-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(44, 95, 109, 0.3) 100%);
+    transition: opacity 0.4s ease;
+}
+
+.service-category-card:hover .category-bg::before {
+    opacity: 0.8;
+}
+
+.category-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(58, 125, 140, 0.2), transparent);
+}
+
+/* Content Section */
+.category-content {
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: var(--text-white);
+}
+
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ocean);
+    margin-bottom: 24px;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    padding: 10px 20px;
+    padding-left: 24px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--text-medium);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 400;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.service-list li:last-child {
+    margin-bottom: 0;
+}
+
+.service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--ocean);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.service-list li:hover {
+    background: linear-gradient(135deg, rgba(58, 125, 140, 0.06) 0%, rgba(95, 179, 189, 0.04) 100%);
+    padding-left: 32px;
+    color: var(--ocean);
+}
+
+.service-list li:hover::before {
+    background: var(--ocean-light);
+    width: 6px;
+    height: 6px;
+    box-shadow: 0 0 0 4px rgba(95, 179, 189, 0.15);
+}
+
+.service-category-card:hover .category-title {
+    color: var(--ocean-deep);
+}
+
 .service-duration {
     display: inline-block;
     padding: 8px 16px;
@@ -562,7 +714,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1920&h=1080&fit=crop') center/cover no-repeat;
+    background: url('/assets/images/about-us.jpeg') center/cover no-repeat;
     z-index: -2;
 }
 

@@ -6,90 +6,162 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Venera Massage Center - A single-page responsive website for a massage therapy center in Galižana, Croatia. The site supports bilingual content (English/Croatian) and includes sections for services, about, and location with Google Maps integration.
 
+**Build System:** Vite + TypeScript
+**Theme:** Coastal Beach (ocean blues, sandy beiges, seafoam accents)
+
 ## Running the Site
 
-Since the site uses `fetch()` to load translation JSON files, it must be served via HTTP - opening `index.html` directly (`file://` protocol) will not work due to CORS restrictions.
-
 ```bash
-# Python 3
-python3 -m http.server 8000
+# Install dependencies (first time only)
+npm install
 
-# Node.js with npx
-npx serve
+# Development server with HMR
+npm run dev
 
-# VS Code: Use "Live Server" extension (right-click index.html → "Open with Live Server")
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
+
+# TypeScript type checking
+npm run type-check
 ```
-
-Then open `http://localhost:8000` in your browser.
 
 ## Architecture
 
 ### File Structure
 ```
 venera-web/
-├── index.html           # Main HTML with sections: hero, services, about, location, footer
-├── styles.css           # All styling with CSS custom properties for theming
-├── script.js            # Language switching, navbar scroll, mobile menu, smooth scroll, animations
-├── i18n/
-│   ├── en.json          # English translations
-│   └── hr.json          # Croatian translations
-└── assets/
-    └── logos/
-        ├── venera-logo.svg    # Full logo with "Venera" + "Massage Center"
-        └── venera-icon.svg    # Icon-only version
+├── index.html           # Main page (Vite entry point)
+├── main.ts              # Application entry point
+├── styles.css           # All styles with CSS variables
+├── package.json         # NPM dependencies & scripts
+├── tsconfig.json        # TypeScript configuration (strict mode)
+├── vite.config.js       # Vite build configuration
+├── .gitignore           # Git ignore rules
+├── src/                 # Source modules (TypeScript)
+│   ├── types.ts         # Type definitions
+│   ├── i18n.ts          # i18n service
+│   ├── navbar.ts        # Navbar module
+│   ├── scroll.ts        # Scroll modules
+│   └── language-toggle.ts
+├── i18n/                # Translations (TypeScript)
+│   ├── en.ts            # English translations
+│   └── hr.ts            # Croatian translations
+├── assets/
+│   └── logos/
+│       ├── venera-logo.svg   # Ocean blue gradients
+│       └── venera-icon.svg   # Ocean blue gradient
+├── dist/                # Build output (generated)
+├── CLAUDE.md            # This file
+└── PROGRESS.md          # Progress log
 ```
 
 ### Internationalization (i18n)
 
 **How it works:**
-- `script.js` loads translations from `i18n/{lang}.json` via `fetch()`
+- Translations are in `i18n/en.ts` and `i18n/hr.ts` as TypeScript modules
 - Elements with `data-lang` attribute get their `textContent` replaced
 - Language preference is persisted in `localStorage`
-- Other language is preloaded on page init for faster switching
+- Type-safe translations with TypeScript interfaces
 
 **Adding/modifying translations:**
-1. Edit `i18n/en.json` and/or `i18n/hr.json`
+1. Edit `i18n/en.ts` and/or `i18n/hr.ts`
 2. Add `data-lang="your-key"` to any HTML element you want translated
 
 **Adding a new language:**
-1. Create `i18n/{lang}.json` with the same keys as `en.json`
-2. Update the language toggle logic in `script.js` if needed
+1. Create `i18n/{lang}.ts` with the same keys as `en.ts`
+2. Update the language toggle logic in `src/language-toggle.ts`
 
 ### Styling System
 
-CSS custom properties (`:root`) define the color scheme:
-- `--primary-color`: Main green/sage (#5a7d7c)
-- `--secondary-color`: Light green (#8b9d83)
-- `--accent-color`: Gold/sand (#d4a574)
-- `--text-dark`, `--text-light`, `--text-white`
-- `--bg-light`, `--bg-cream`, `--bg-dark`
+**Theme: Coastal Beach** (inspired by Holden Beach Massage)
+
+| Purpose | Color Name | Hex |
+|---------|------------|-----|
+| Primary (Ocean) | Main ocean | `#3A7D8C` |
+| Primary (Deep) | Deep ocean | `#2C5F6D` |
+| Primary (Light) | Aqua blue | `#5FB3BD` |
+| Secondary (Sand) | Soft sand | `#E8DFD3` |
+| Secondary (Deep) | Deep sand | `#D4C5B0` |
+| Secondary (Light) | Light cream | `#F7F3EC` |
+| Accent (Seafoam) | Soft seafoam | `#7DB5B8` |
+| Accent (Aqua) | Warm aqua | `#6BA5A8` |
+| Accent (Light) | Light aqua | `#9DC5C7` |
+
+**Fonts:**
 - `--font-heading`: Cormorant Garamond (serif)
 - `--font-body`: Montserrat (sans-serif)
 
 ### JavaScript Modules
 
-All code is in `script.js` with these functions:
-- `loadTranslations(lang)` - Fetches `i18n/{lang}.json`
-- `setLanguage(lang)` - Updates all `data-lang` elements
-- `toggleLanguage()` - Switches between EN/HR
-- `initNavbar()` - Adds scroll effect (bg changes when scrolled)
-- `initMobileMenu()` - Hamburger menu toggle
-- `initSmoothScroll()` - Smooth scroll for anchor links
-- `initScrollAnimations()` - IntersectionObserver for fade-in animations
+TypeScript modules in `src/`:
+- `types.ts` - Type definitions for translations
+- `i18n.ts` - Translation service with loading and switching
+- `navbar.ts` - Navbar scroll effect (bg changes when scrolled)
+- `scroll.ts` - Smooth scroll and scroll animations (IntersectionObserver)
+- `language-toggle.ts` - Language switching between EN/HR
 
 ### Logo
 
-The logo uses SVG with gradients:
-- `logoGradient`: Sage to mint green (main "Venera" text)
-- `logoAccent`: Sand to soft gold ("Massage Center" text)
+The logo uses SVG with ocean gradients:
+- **Venera text**: Ocean blue gradient `#5FB3BD` → `#3A7D8C` → `#2C5F6D`
+- **Massage Center**: Aqua gradient `#9DC5C7` → `#7DB5B8` → `#6BA5A8`
 
 Logo file: `assets/logos/venera-logo.svg`
 
+### Contact Buttons
+
+- **Viber**: Ocean blue gradient (#3A7D8C → #2C5F6D)
+- **WhatsApp**: Official green (#25D366 → #128C7E)
+
+### Hero Background
+
+B&W spa image from Unsplash with coastal blue overlay (25-35% opacity)
+URL: `https://unsplash.com/photos/FhDeYh4I3Nw/download?force=true`
+
 ## Location Details
 
-Current address: Puljska cesta 49A, 52215 Galižana, Croatia
-Phone: +385 99 592 9457 (booking by phone only)
-Hours: Every day 8:00 - 21:00
+- **Address**: Puljska cesta 49A, 52215 Galižana, Croatia
+- **Coordinates**: 44.93193, 13.85698
+- **Phone**: +385 99 592 9457
+- **Hours**: Every day 8:00 - 21:00
+- **Booking**: Phone, Viber, or WhatsApp
+
 Google Maps embed is in the `#location` section iframe.
 
 Note: Some browsers with ad blockers may show `ERR_BLOCKED_BY_CLIENT` for Google Maps CSP test - this is harmless and the map still loads.
+
+## Pending Work
+
+### Content Updates Needed
+- [ ] Replace Lorem Ipsum text with real service descriptions
+- [ ] Add real pricing for services
+- [ ] Update working hours if different
+- [ ] Add real email (currently: info@venera-massage.hr)
+- [ ] Replace placeholder images with real photos
+
+### Optional Enhancements
+- [ ] Add favicon
+- [ ] Add meta tags for SEO
+- [ ] Add Open Graph tags for social sharing
+- [ ] Create "View on Google Maps" button
+- [ ] Add more languages if needed
+- [ ] Add analytics tracking
+
+## Deployment
+
+### Production Build
+```bash
+npm run build
+```
+
+### Deploy `dist/` folder to:
+- **Netlify**: Drag & drop `dist/` folder
+- **Vercel**: `vercel deploy dist`
+- **GitHub Pages**: Push `dist/` to gh-pages branch
+
+## Known Issues
+
+- Google Maps may show `ERR_BLOCKED_BY_CLIENT` in console due to ad blockers (harmless, map still works)
