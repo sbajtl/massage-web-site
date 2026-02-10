@@ -55,7 +55,7 @@ export class ScrollAnimations {
     private init(): void {
         // Observe service cards, features, and info items with staggered delay
         const animatedElements = document.querySelectorAll<HTMLElement>(
-            '.service-card, .feature, .info-item'
+            '.service-category-card, .feature, .info-item'
         );
 
         animatedElements.forEach((el, index) => {
