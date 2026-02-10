@@ -39,7 +39,7 @@ const hr: TranslationKeys = {
     "service-lymphatic": "Limfna drenaža nogu",
     // Usluge energetske masaže
     "service-volcanic-back": "Masaža leđa vulkanskim kamenjem",
-    "service-volcanic-full": "Masaža cijelog tijela vulk. kamenjem",
+    "service-volcanic-full": "Masaža vulkanskim kamenjem",
     "service-reflexology": "Refleksološka masaža stopala",
     "service-aroma-back": "Aroma masaža leđa",
     "service-aroma-full": "Aroma masaža cijelog tijela",

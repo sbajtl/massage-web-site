@@ -39,7 +39,7 @@ const en: TranslationKeys = {
     "service-lymphatic": "Lymphatic Drainage of Legs",
     // Energy Massage services
     "service-volcanic-back": "Back Massage with Volcanic Stones",
-    "service-volcanic-full": "Full Body Volcanic Stone Massage",
+    "service-volcanic-full": "Volcanic Stone Massage",
     "service-reflexology": "Reflexology Foot Massage",
     "service-aroma-back": "Aroma Back Massage",
     "service-aroma-full": "Full Body Aroma Massage",
