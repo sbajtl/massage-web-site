@@ -28,6 +28,7 @@ export type SupportedLanguage = 'en' | 'hr';
  * Translation keys schema
  */
 export interface TranslationKeys {
+    'site-title': string;
     'nav-home': string;
     'nav-services': string;
     'nav-about': string;

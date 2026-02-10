@@ -4,6 +4,7 @@
 import type { TranslationKeys } from '../src/types';
 
 const hr: TranslationKeys = {
+    "site-title": "Venera njega tijela",
     "nav-home": "Naslovnica",
     "nav-services": "Usluge",
     "nav-about": "O nama",

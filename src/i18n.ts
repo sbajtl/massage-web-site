@@ -128,6 +128,15 @@ class I18nService {
      * Update all translatable elements in the DOM
      */
     private updateUI(): void {
+        // Update page title
+        const titleElement = document.querySelector('[data-lang="site-title"]');
+        if (titleElement) {
+            const titleKey = titleElement.getAttribute('data-lang') as keyof TranslationKeys;
+            const title = this.t(titleKey);
+            document.title = title;
+        }
+
+        // Update text content
         document.querySelectorAll('[data-lang]').forEach((element) => {
             const key = element.getAttribute('data-lang') as keyof TranslationKeys;
             if (key) {
@@ -135,6 +144,15 @@ class I18nService {
                 if (translation !== key) {
                     element.textContent = translation;
                 }
+            }
+        });
+
+        // Update alt attributes
+        document.querySelectorAll('[data-lang-alt]').forEach((element) => {
+            const key = element.getAttribute('data-lang-alt') as keyof TranslationKeys;
+            if (key) {
+                const translation = this.t(key);
+                element.setAttribute('alt', translation);
             }
         });
     }

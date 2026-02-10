@@ -4,6 +4,7 @@
 import type { TranslationKeys } from '../src/types';
 
 const en: TranslationKeys = {
+    "site-title": "Venera Body Care",
     "nav-home": "Home",
     "nav-services": "Services",
     "nav-about": "About",
