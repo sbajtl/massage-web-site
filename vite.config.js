@@ -17,9 +17,14 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info']
+      },
+      format: {
+        comments: false
       }
     },
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
@@ -27,6 +32,7 @@ export default defineConfig({
         entryFileNames: 'assets/[name]-[hash].js'
       }
     },
+    chunkSizeWarningLimit: 1000,
     reportCompressedSize: true
   },
   server: {
