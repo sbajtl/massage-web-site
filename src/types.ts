@@ -43,34 +43,15 @@ export interface TranslationKeys {
     // Category titles
     'category-classic-title': string;
     'category-relax-title': string;
-    'category-anticellulite-title': string;
-    'category-energy-title': string;
     // Classic Massage services
     'service-back': string;
     'service-legs': string;
     'service-hands': string;
     'service-head-face': string;
     'service-full-body': string;
-    'service-feet-butter': string;
     // Relax Massage services
     'service-relax-back': string;
     'service-relax-full': string;
-    'service-royal': string;
-    // Anti-cellulite Program services
-    'service-anticellulite': string;
-    'service-body-scrub': string;
-    'service-paraffin': string;
-    'service-cupping': string;
-    'service-lymphatic': string;
-    // Energy Massage services
-    'service-volcanic-back': string;
-    'service-volcanic-full': string;
-    'service-reflexology': string;
-    'service-aroma-back': string;
-    'service-aroma-full': string;
-    'service-shiatsu': string;
-    'service-raindrop': string;
-    'service-combo': string;
     'about-title': string;
     'about-text1': string;
     'about-text2': string;
