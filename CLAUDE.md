@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Commit Rules
+
+- NEVER add `Co-Authored-By: Claude` (or any Claude/AI attribution) to commit messages. Commits are authored by the repo owner only.
+
 ## Project Overview
 
 Venera Massage Center - A single-page responsive website for a massage therapy center in Galižana, Croatia. The site supports bilingual content (English/Croatian) and includes sections for services, about, and location with Google Maps integration.
