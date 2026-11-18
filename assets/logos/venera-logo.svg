@@ -2,17 +2,17 @@
   <defs>
     <!-- Coastal Ocean Blue Gradient -->
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#5FB3BD"/>
-      <stop offset="35%" style="stop-color:#3A7D8C"/>
-      <stop offset="70%" style="stop-color:#2C5F6D"/>
-      <stop offset="100%" style="stop-color:#1D4252"/>
+      <stop offset="0%" style="stop-color:#F3EDE0"/>
+      <stop offset="35%" style="stop-color:#EDE6D6"/>
+      <stop offset="70%" style="stop-color:#D9C9A6"/>
+      <stop offset="100%" style="stop-color:#C8A15A"/>
     </linearGradient>
 
     <!-- Soft Aqua Accent Gradient -->
     <linearGradient id="logoAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#9DC5C7"/>
-      <stop offset="50%" style="stop-color:#7DB5B8"/>
-      <stop offset="100%" style="stop-color:#6BA5A8"/>
+      <stop offset="0%" style="stop-color:#D8B678"/>
+      <stop offset="50%" style="stop-color:#C8A15A"/>
+      <stop offset="100%" style="stop-color:#B08A45"/>
     </linearGradient>
 
     <!-- Soft glow filter for elegance -->
@@ -26,7 +26,7 @@
   </defs>
 
   <!-- Background subtle glow -->
-  <ellipse cx="386" cy="150" rx="200" ry="100" fill="#3A7D8C" opacity="0.08"/>
+  <ellipse cx="386" cy="150" rx="200" ry="100" fill="#EDE6D6" opacity="0.08"/>
 
   <!-- Main Venera text with gradient -->
   <g fill="url(#logoGradient)" filter="url(#softGlow)">
@@ -47,7 +47,7 @@
   <ellipse cx="386" cy="290" rx="120" ry="2" fill="url(#logoGradient)" opacity="0.5"/>
 
   <!-- Decorative dots - coastal ocean theme -->
-  <circle cx="266" cy="290" r="3" fill="#5FB3BD" opacity="0.7"/>
-  <circle cx="386" cy="290" r="4" fill="#9DC5C7" opacity="0.8"/>
-  <circle cx="506" cy="290" r="3" fill="#2C5F6D" opacity="0.7"/>
+  <circle cx="266" cy="290" r="3" fill="#F3EDE0" opacity="0.7"/>
+  <circle cx="386" cy="290" r="4" fill="#D8B678" opacity="0.8"/>
+  <circle cx="506" cy="290" r="3" fill="#D9C9A6" opacity="0.7"/>
 </svg>

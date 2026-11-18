@@ -11,7 +11,7 @@ import { i18n } from './src/i18n';
 
 // ===== Import Modules =====
 import { Navbar } from './src/navbar';
-import { SmoothScroll, ScrollAnimations } from './src/scroll';
+import { SmoothScroll } from './src/scroll';
 import { LanguageToggle } from './src/language-toggle';
 
 /**
@@ -66,9 +66,6 @@ class App {
 
         // Initialize smooth scroll
         this.modules.smoothScroll = new SmoothScroll();
-
-        // Initialize scroll animations
-        this.modules.scrollAnimations = new ScrollAnimations();
 
         // Initialize language toggle
         this.modules.languageToggle = new LanguageToggle(i18n);

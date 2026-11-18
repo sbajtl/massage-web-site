@@ -27,9 +27,14 @@ export class Navbar {
     private initScrollEffect(): void {
         const SCROLL_THRESHOLD = 50;
 
-        window.addEventListener('scroll', () => {
+        const update = (): void => {
             this.navbar.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
-        }, { passive: true });
+            // Floating contact buttons appear once the hero call button is out of view
+            document.body.classList.toggle('past-hero', window.scrollY > window.innerHeight * 0.7);
+        };
+
+        window.addEventListener('scroll', update, { passive: true });
+        update();
     }
 
     /**
@@ -62,8 +67,9 @@ export class Navbar {
      * Toggle mobile menu open/close
      */
     private toggleMobileMenu(): void {
-        this.hamburger?.classList.toggle('active');
-        this.navMenu?.classList.toggle('active');
+        const isOpen = this.navMenu?.classList.toggle('active') ?? false;
+        this.hamburger?.classList.toggle('active', isOpen);
+        this.hamburger?.setAttribute('aria-expanded', String(isOpen));
     }
 
     /**
@@ -71,6 +77,7 @@ export class Navbar {
      */
     private closeMobileMenu(): void {
         this.hamburger?.classList.remove('active');
+        this.hamburger?.setAttribute('aria-expanded', 'false');
         this.navMenu?.classList.remove('active');
     }
 
