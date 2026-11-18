@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://venera-masaza.hr/sitemap.xml
