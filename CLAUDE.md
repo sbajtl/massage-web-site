@@ -8,10 +8,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Venera Massage Center - A single-page responsive website for a massage therapy center in Galižana, Croatia. The site supports bilingual content (English/Croatian) and includes sections for services, about, and location with Google Maps integration.
+Venera Body Care - A single-page responsive website for a massage studio in Galižana, 4 km from Pula, Croatia. Croatian is the main page (`/`), English lives at `/en/`. Sections: hero, services (5 categories, no prices or durations), about, and location with Google Maps.
 
 **Build System:** Vite + TypeScript
-**Theme:** Coastal Beach (ocean blues, sandy beiges, seafoam accents)
+**Theme:** Večernje ulje (dark olive, warm amber, linen)
 
 ## Running the Site
 
@@ -43,18 +43,23 @@ venera-web/
 ├── package.json         # NPM dependencies & scripts
 ├── tsconfig.json        # TypeScript configuration (strict mode)
 ├── vite.config.js       # Vite build configuration
+├── build/
+│   └── i18n-pages.ts    # Vite plugin: renders HR (/) and EN (/en/) pages
 ├── .gitignore           # Git ignore rules
 ├── src/                 # Source modules (TypeScript)
 │   ├── types.ts         # Type definitions
 │   ├── navbar.ts        # Navbar module
-│   ├── scroll.ts        # Scroll modules
+│   ├── scroll.ts        # Smooth scroll
+│   └── language-hint.ts # "View this page in English" bar
 ├── i18n/                # Translations (TypeScript)
 │   ├── en.ts            # English translations
 │   └── hr.ts            # Croatian translations
 ├── assets/
+│   ├── images/          # evening-hands.jpg (hero), evening-oil.jpg (about)
 │   └── logos/
-│       ├── venera-logo.svg   # Ocean blue gradients
-│       └── venera-icon.svg   # Ocean blue gradient
+│       ├── venera-logo.svg   # Linen to amber gradients
+│       └── venera-icon.svg   # Old ocean blue icon (unused)
+├── public/              # CNAME, robots.txt, sitemap.xml, og-image.jpg
 ├── dist/                # Build output (generated)
 ├── CLAUDE.md            # This file
 └── PROGRESS.md          # Progress log
@@ -82,48 +87,52 @@ venera-web/
 
 ### Styling System
 
-**Theme: Coastal Beach** (inspired by Holden Beach Massage)
+**Theme: Večernje ulje (evening oil)** — a treatment room in the evening: dark olive page, warm amber lamp light, linen text and a linen "treatment menu" card for services. Tokens live on `:root` in `styles.css`.
 
-| Purpose | Color Name | Hex |
-|---------|------------|-----|
-| Primary (Ocean) | Main ocean | `#3A7D8C` |
-| Primary (Deep) | Deep ocean | `#2C5F6D` |
-| Primary (Light) | Aqua blue | `#5FB3BD` |
-| Secondary (Sand) | Soft sand | `#E8DFD3` |
-| Secondary (Deep) | Deep sand | `#D4C5B0` |
-| Secondary (Light) | Light cream | `#F7F3EC` |
-| Accent (Seafoam) | Soft seafoam | `#7DB5B8` |
-| Accent (Aqua) | Warm aqua | `#6BA5A8` |
-| Accent (Light) | Light aqua | `#9DC5C7` |
+| Token | Hex | Use |
+|-------|-----|-----|
+| `--olive` | `#1E2420` | Page background |
+| `--olive-deep` | `#161B17` | Footer, scrolled navbar, language hint |
+| `--olive-raised` | `#262E28` | Quiet raised surfaces on dark |
+| `--amber` | `#C8A15A` | CTA buttons and small accents (sparingly) |
+| `--amber-soft` | `#E0C38A` | Amber text on dark |
+| `--linen` | `#EDE6D6` | Text on dark, services menu card |
+| `--linen-dim` | `#C9C2B1` | Body text on dark |
+| `--sage` | `#9AA98B` | Secondary text on dark |
+| `--ink` / `--ink-muted` | `#1E2420` / `#59604F` | Text on linen |
 
-**Fonts:**
-- `--font-heading`: Cormorant Garamond (serif)
-- `--font-body`: Montserrat (sans-serif)
+**Fonts** (Google Fonts):
+- `--font-display`: Gloock (headings)
+- `--font-body`: Manrope (body and UI)
+
+**Motion:** one moment only — the amber hero glow brightens once on page load; disabled under `prefers-reduced-motion`. No per-section scroll fade-ins.
 
 ### JavaScript Modules
 
 TypeScript modules in `src/`:
-- `types.ts` - Type definitions for translations
-- `navbar.ts` - Navbar scroll effect (bg changes when scrolled)
-- `scroll.ts` - Smooth scroll and scroll animations (IntersectionObserver)
+- `types.ts` - Translation key types
+- `navbar.ts` - Navbar background on scroll, mobile menu (`aria-expanded`), floating contact buttons appear after the hero (`body.past-hero`)
+- `scroll.ts` - Smooth scroll to anchors, offset below the fixed navbar
+- `language-hint.ts` - English page hint for non-Croatian browsers
 
 ### Logo
 
-The logo uses SVG with ocean gradients:
-- **Venera text**: Ocean blue gradient `#5FB3BD` → `#3A7D8C` → `#2C5F6D`
-- **Massage Center**: Aqua gradient `#9DC5C7` → `#7DB5B8` → `#6BA5A8`
+Original Venera script logo, recoloured to the theme:
+- **Venera text**: linen to amber gradient `#F3EDE0` → `#EDE6D6` → `#D9C9A6` → `#C8A15A`
+- **Accent**: amber gradient `#D8B678` → `#C8A15A` → `#B08A45`
 
-Logo file: `assets/logos/venera-logo.svg`
+Logo file: `assets/logos/venera-logo.svg` (navigation). The footer uses a "Venera" wordmark in Gloock.
 
 ### Contact Buttons
 
-- **Viber**: Ocean blue gradient (#3A7D8C → #2C5F6D)
-- **WhatsApp**: Official green (#25D366 → #128C7E)
+- **Call**: amber pill in the hero (`tel:+385995929457`)
+- **Viber**: brand purple `#7360F2`
+- **WhatsApp**: brand green `#1FAF55`
+- Floating call/Viber/WhatsApp buttons on mobile only, shown after scrolling past the hero
 
 ### Hero Background
 
-B&W spa image from Unsplash with coastal blue overlay (25-35% opacity)
-URL: `https://unsplash.com/photos/FhDeYh4I3Nw/download?force=true`
+Local photo `assets/images/evening-hands.jpg` (lamp and hands) with the amber radial glow on top.
 
 ## Location Details
 
@@ -140,19 +149,17 @@ Note: Some browsers with ad blockers may show `ERR_BLOCKED_BY_CLIENT` for Google
 ## Pending Work
 
 ### Content Updates Needed
-- [ ] Replace Lorem Ipsum text with real service descriptions
-- [ ] Add real pricing for services
-- [ ] Update working hours if different
-- [ ] Add real email (currently: info@venera-massage.hr)
-- [ ] Replace placeholder images with real photos
+- [ ] Replace stock photos with real photos of the studio
+- [ ] Add real email if one should be shown
+
+### Outside the code (SEO)
+- [ ] Google Business Profile: category "Masaža", same name/address/phone, link to the site, photos, hours
+- [ ] Collect Google reviews
+- [ ] Google Search Console: verify the domain and submit `sitemap.xml`
 
 ### Optional Enhancements
-- [ ] Add favicon
-- [ ] Add meta tags for SEO
-- [ ] Add Open Graph tags for social sharing
-- [ ] Create "View on Google Maps" button
-- [ ] Add more languages if needed
 - [ ] Add analytics tracking
+- [ ] Add more languages if needed (new `i18n/{lang}.ts`, a path in `build/i18n-pages.ts`, hreflang links and sitemap entries)
 
 ## Deployment
 
@@ -161,10 +168,8 @@ Note: Some browsers with ad blockers may show `ERR_BLOCKED_BY_CLIENT` for Google
 npm run build
 ```
 
-### Deploy `dist/` folder to:
-- **Netlify**: Drag & drop `dist/` folder
-- **Vercel**: `vercel deploy dist`
-- **GitHub Pages**: Push `dist/` to gh-pages branch
+### Deploy
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds and publishes `dist/` to the `gh-pages` branch (GitHub Pages, custom domain `venera-masaza.hr` via `public/CNAME`).
 
 ## Known Issues
 

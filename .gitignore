@@ -23,3 +23,5 @@ Thumbs.db
 # yarn.lock
 # pnpm-lock.yaml
  
+
+.superpowers/
