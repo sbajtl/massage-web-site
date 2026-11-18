@@ -27,7 +27,9 @@ export class SmoothScroll {
     }
 
     private scrollTo(target: HTMLElement): void {
-        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+        // Account for the fixed navbar and the language hint above it
+        const navbarBottom = document.getElementById('navbar')?.getBoundingClientRect().bottom ?? 80;
+        const offsetTop = target.offsetTop - navbarBottom;
 
         window.scrollTo({
             top: offsetTop,

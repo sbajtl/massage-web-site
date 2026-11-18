@@ -46,10 +46,8 @@ venera-web/
 ├── .gitignore           # Git ignore rules
 ├── src/                 # Source modules (TypeScript)
 │   ├── types.ts         # Type definitions
-│   ├── i18n.ts          # i18n service
 │   ├── navbar.ts        # Navbar module
 │   ├── scroll.ts        # Scroll modules
-│   └── language-toggle.ts
 ├── i18n/                # Translations (TypeScript)
 │   ├── en.ts            # English translations
 │   └── hr.ts            # Croatian translations
@@ -62,21 +60,25 @@ venera-web/
 └── PROGRESS.md          # Progress log
 ```
 
-### Internationalization (i18n)
+### Internationalization (i18n) and SEO
 
 **How it works:**
-- Translations are in `i18n/en.ts` and `i18n/hr.ts` as TypeScript modules
-- Elements with `data-lang` attribute get their `textContent` replaced
-- Language preference is persisted in `localStorage`
-- Type-safe translations with TypeScript interfaces
+- Translations are in `i18n/hr.ts` and `i18n/en.ts`; keys are typed in `src/types.ts`
+- Pages are rendered per language at build time by `build/i18n-pages.ts` (a Vite plugin):
+  - `/` is the Croatian main page, `/en/` is the English page (`dist/en/index.html`)
+  - `data-lang="key"` replaces an element's text
+  - `data-lang-attr="attr:key;attr:key"` sets attributes (meta content, alt, aria-label, href)
+  - `<script type="application/ld+json" data-jsonld>` is filled with the LocalBusiness schema
+- The EN/HR button is a plain link between the two pages; there is no client-side text switching
+- `src/language-hint.ts` shows a one-line "View this page in English" bar on the Croatian page when the browser language is not hr/bs/sr; dismissal is remembered in localStorage. There is deliberately no automatic redirect, so Google keeps indexing the Croatian page
+- The dev server serves `/en/` through the same plugin
+- A missing key fails the build
 
 **Adding/modifying translations:**
-1. Edit `i18n/en.ts` and/or `i18n/hr.ts`
-2. Add `data-lang="your-key"` to any HTML element you want translated
+1. Add the key to `src/types.ts`, `i18n/hr.ts` and `i18n/en.ts`
+2. Use it in `index.html` with `data-lang` or `data-lang-attr`
 
-**Adding a new language:**
-1. Create `i18n/{lang}.ts` with the same keys as `en.ts`
-2. Update the language toggle logic in `src/language-toggle.ts`
+**SEO files:** `public/robots.txt`, `public/sitemap.xml` (update `lastmod` on content changes), `public/og-image.jpg` (1200x630 social preview).
 
 ### Styling System
 
@@ -102,10 +104,8 @@ venera-web/
 
 TypeScript modules in `src/`:
 - `types.ts` - Type definitions for translations
-- `i18n.ts` - Translation service with loading and switching
 - `navbar.ts` - Navbar scroll effect (bg changes when scrolled)
 - `scroll.ts` - Smooth scroll and scroll animations (IntersectionObserver)
-- `language-toggle.ts` - Language switching between EN/HR
 
 ### Logo
 

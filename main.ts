@@ -6,13 +6,10 @@
 // ===== Import Styles =====
 import './styles.css';
 
-// ===== Import Services =====
-import { i18n } from './src/i18n';
-
 // ===== Import Modules =====
 import { Navbar } from './src/navbar';
 import { SmoothScroll } from './src/scroll';
-import { LanguageToggle } from './src/language-toggle';
+import { LanguageHint } from './src/language-hint';
 
 /**
  * Application Class
@@ -53,7 +50,7 @@ class App {
      * Initialize core services
      */
     private async initServices(): Promise<void> {
-        // i18n is already initialized in the module
+        // Text is rendered per language at build time (build/i18n-pages.ts)
         // Any additional services can be added here
     }
 
@@ -64,11 +61,11 @@ class App {
         // Initialize navbar
         this.modules.navbar = new Navbar();
 
+        // Offer the English page to visitors who don't read Croatian
+        this.modules.languageHint = new LanguageHint();
+
         // Initialize smooth scroll
         this.modules.smoothScroll = new SmoothScroll();
-
-        // Initialize language toggle
-        this.modules.languageToggle = new LanguageToggle(i18n);
     }
 
     /**
@@ -89,7 +86,6 @@ function bootstrap(): App {
     // Expose app globally for debugging (removed in production build)
     if (import.meta.env.DEV) {
         (window as any).app = app;
-        (window as any).i18n = i18n;
     }
 
     return app;

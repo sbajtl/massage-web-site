@@ -28,14 +28,26 @@ export type SupportedLanguage = 'en' | 'hr';
  * Translation keys schema
  */
 export interface TranslationKeys {
+    // Page metadata and language switch
+    'meta-title': string;
+    'meta-description': string;
+    'page-url': string;
+    'og-locale': string;
+    'og-locale-alt': string;
+    'lang-switch-label': string;
+    'lang-switch-url': string;
+    'lang-switch-code': string;
+    'lang-switch-aria': string;
     'site-title': string;
     'nav-home': string;
     'nav-services': string;
     'nav-about': string;
     'nav-location': string;
+    'nav-aria': string;
+    'menu-aria': string;
+    'call-aria': string;
     // Hero
     'hero-title': string;
-    'hero-subtitle': string;
     'hero-text': string;
     'hero-cta': string;
     'book-cta': string;
@@ -81,6 +93,7 @@ export interface TranslationKeys {
     'feature2-desc': string;
     'feature3-title': string;
     'feature3-desc': string;
+    'about-img-alt': string;
     // Location
     'location-title': string;
     'location-subtitle': string;
@@ -90,20 +103,12 @@ export interface TranslationKeys {
     'contact-label': string;
     'contact-desc': string;
     'directions-cta': string;
+    'map-title': string;
     // Footer
     'footer-tagline': string;
     'footer-rights': string;
 }
 
-/**
- * Translations object type
- */
-export type Translations = Record<SupportedLanguage, TranslationKeys>;
-
-/**
- * Language change listener callback
- */
-export type LanguageChangeListener = (lang: SupportedLanguage) => void;
 
 /**
  * Module interface

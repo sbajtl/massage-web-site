@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
+import { i18nPages } from './build/i18n-pages';
 
 export default defineConfig({
   base: '/',
   plugins: [
+    i18nPages(),
     checker({
       typescript: true,
       eslint: false

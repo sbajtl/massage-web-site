@@ -4,20 +4,32 @@
 import type { TranslationKeys } from '../src/types';
 
 const en: TranslationKeys = {
+    // Page metadata and language switch
+    "meta-title": "Massage near Pula, Galižana | Venera Body Care",
+    "meta-description": "Massage in Galižana, 4 km from Pula: classic, relaxing and sports massage, reflexology and shiatsu. Open daily 8:00–21:00, free parking.",
+    "page-url": "https://venera-masaza.hr/en/",
+    "og-locale": "en_US",
+    "og-locale-alt": "hr_HR",
+    "lang-switch-label": "HR",
+    "lang-switch-url": "/",
+    "lang-switch-code": "hr",
+    "lang-switch-aria": "Hrvatska verzija",
     "site-title": "Venera Body Care",
     "nav-home": "Home",
     "nav-services": "Services",
     "nav-about": "About",
     "nav-location": "Location",
+    "nav-aria": "Main",
+    "menu-aria": "Menu",
+    "call-aria": "Call +385 99 592 9457",
     // Hero
     "hero-title": "Venera Body Care",
-    "hero-subtitle": "Massage in Galižana",
-    "hero-text": "Classic, relaxing, energy and sports massage, a few minutes from Pula.",
+    "hero-text": "Massage in Galižana, 4 km from Pula. Classic, relaxing, energy and sports massage.",
     "hero-cta": "See treatments",
     "book-cta": "Call to book",
     "hours-short": "Every day 8:00 – 21:00",
     // Services
-    "services-title": "Services",
+    "services-title": "Massage treatments",
     "services-subtitle": "Book by phone, Viber or WhatsApp.",
     // Classic massage
     "cat-classic": "Classic massage",
@@ -48,7 +60,7 @@ const en: TranslationKeys = {
     "combo-stress-desc": "Classic back massage, shiatsu for shoulders, neck, head and face, and foot reflexology",
     // About
     "about-title": "Away from the crowds",
-    "about-text1": "Venera is a small massage studio in Galižana, surrounded by greenery and away from the bustle of town. Locals visit all year round, and in summer guests from the coast join them.",
+    "about-text1": "Venera is a small massage studio in Galižana, just 4 km from Pula, surrounded by greenery and away from the bustle of town. Locals visit all year round, and in summer guests from the coast join them.",
     "about-text2": "We're easy to reach, with free parking right outside the entrance: no hunting for a space and no rush. You step straight from your car into a calm, comfortable room.",
     "about-text3": "Every massage is adjusted to you: the pressure, the pace and the areas you want us to focus on. We work with quality oils and creams, in a quiet room with soft light.",
     "feature1-title": "Surrounded by greenery",
@@ -57,17 +69,19 @@ const en: TranslationKeys = {
     "feature2-desc": "Pressure and pace the way you like it.",
     "feature3-title": "Parking right outside",
     "feature3-desc": "Free, no hunting for a space.",
+    "about-img-alt": "Massage oil dripping into a palm",
     // Location
     "location-title": "Find us",
-    "location-subtitle": "Galižana, a few minutes from Pula.",
+    "location-subtitle": "Galižana, 4 km from Pula. Free parking outside.",
     "address-label": "Address",
     "hours-label": "Opening hours",
     "hours-every-day": "Every day: 8:00 – 21:00",
     "contact-label": "Bookings",
     "contact-desc": "Call us or send a message on Viber or WhatsApp.",
     "directions-cta": "Open in Google Maps",
+    "map-title": "Map: Venera Body Care, Puljska cesta 49A, Galižana",
     // Footer
-    "footer-tagline": "Massage in Galižana, every day from 8 am to 9 pm.",
+    "footer-tagline": "Massage in Galižana near Pula, every day from 8 am to 9 pm.",
     "footer-rights": "All rights reserved."
 };
 

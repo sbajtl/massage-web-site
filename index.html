@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Venera Massage Center - Professional massage therapy services in Galižana, Croatia. Classic and Relax massages by expert therapists.">
-    <meta name="keywords" content="massage, masaža, wellness, relaksacija, tretman, Galižana, Hrvatska, Venera">
+    <title data-lang="meta-title">Masaža Pula i Galižana | Venera Body Care</title>
+    <meta name="description" content="" data-lang-attr="content:meta-description">
     <meta name="theme-color" content="#1E2420">
 
-    <!-- Open Graph / Facebook -->
+    <!-- One page per language: Croatian is the main page, English lives at /en/ -->
+    <link rel="canonical" href="https://venera-masaza.hr/" data-lang-attr="href:page-url">
+    <link rel="alternate" hreflang="hr" href="https://venera-masaza.hr/">
+    <link rel="alternate" hreflang="en" href="https://venera-masaza.hr/en/">
+    <link rel="alternate" hreflang="x-default" href="https://venera-masaza.hr/">
+
+    <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://venera-masaza.hr/">
-    <meta property="og:title" content="Venera Massage Center">
-    <meta property="og:description" content="Professional massage therapy services in Galižana, Croatia">
-    <meta property="og:image" content="https://venera-masaza.hr/assets/venera-logo-DmvySCB0.svg">
+    <meta property="og:site_name" content="Venera Body Care">
+    <meta property="og:url" content="https://venera-masaza.hr/" data-lang-attr="content:page-url">
+    <meta property="og:title" content="" data-lang-attr="content:meta-title">
+    <meta property="og:description" content="" data-lang-attr="content:meta-description">
+    <meta property="og:locale" content="hr_HR" data-lang-attr="content:og-locale">
+    <meta property="og:locale:alternate" content="en_US" data-lang-attr="content:og-locale-alt">
+    <meta property="og:image" content="https://venera-masaza.hr/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://venera-masaza.hr/">
-    <meta property="twitter:title" content="Venera Massage Center">
-    <meta property="twitter:description" content="Professional massage therapy services in Galižana, Croatia">
-    <meta property="twitter:image" content="https://venera-masaza.hr/assets/venera-logo-DmvySCB0.svg">
+    <!-- Business details for search engines, filled in at build time -->
+    <script type="application/ld+json" data-jsonld></script>
 
-    <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/assets/images/evening-hands.jpg" fetchpriority="high">
 
-    <title data-lang="site-title">Venera Body Care</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231E2420' width='100' height='100' rx='20'/><text x='50' y='74' font-family='Georgia, serif' font-size='66' fill='%23C8A15A' text-anchor='middle'>V</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar" aria-label="Main">
+    <nav class="navbar" id="navbar" aria-label="Main" data-lang-attr="aria-label:nav-aria">
         <div class="container nav-inner">
-            <a href="#home" class="wordmark"><img src="assets/logos/venera-logo.svg" alt="Venera Body Care" data-lang-alt="site-title" class="nav-logo" width="773" height="323"></a>
+            <a href="#home" class="wordmark"><img src="/assets/logos/venera-logo.svg" alt="Venera Body Care" data-lang-attr="alt:site-title" class="nav-logo" width="773" height="323"></a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" data-lang="nav-home">Home</a></li>
                 <li><a href="#services" data-lang="nav-services">Services</a></li>
@@ -41,8 +48,8 @@
                 <li><a href="#location" data-lang="nav-location">Location</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" type="button">EN / HR</button>
-                <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="navMenu" aria-expanded="false">
+                <a class="lang-toggle" id="langToggle" href="/en/" hreflang="en" lang="en" aria-label="English version" data-lang="lang-switch-label" data-lang-attr="href:lang-switch-url;hreflang:lang-switch-code;lang:lang-switch-code;aria-label:lang-switch-aria">EN</a>
+                <button class="hamburger" id="hamburger" type="button" aria-label="Menu" data-lang-attr="aria-label:menu-aria" aria-controls="navMenu" aria-expanded="false">
                     <span></span>
                     <span></span>
                 </button>
@@ -54,12 +61,12 @@
         <!-- Hero -->
         <section id="home" class="hero">
             <div class="hero-media" aria-hidden="true">
-                <img src="assets/images/evening-hands.jpg" alt="" width="1800" height="1165" fetchpriority="high">
+                <img src="/assets/images/evening-hands.jpg" alt="" width="1800" height="1165" fetchpriority="high">
             </div>
             <div class="hero-glow" aria-hidden="true"></div>
             <div class="container hero-inner">
                 <h1 class="hero-title" data-lang="hero-title">Venera Body Care</h1>
-                <p class="hero-text" data-lang="hero-text">Classic, relaxing, energy and sports massage, a few minutes from Pula.</p>
+                <p class="hero-text" data-lang="hero-text">Massage in Galižana, 4 km from Pula. Classic, relaxing, energy and sports massage.</p>
                 <div class="hero-actions">
                     <a href="tel:+385995929457" class="btn btn-amber">
                         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
@@ -145,7 +152,7 @@
         <section id="about" class="about">
             <div class="container about-inner">
                 <figure class="about-media">
-                    <img src="assets/images/evening-oil.jpg" alt="" width="1400" height="788" loading="lazy">
+                    <img src="/assets/images/evening-oil.jpg" alt="Massage oil dripping into a palm" data-lang-attr="alt:about-img-alt" width="1400" height="788" loading="lazy">
                 </figure>
                 <div class="about-text">
                     <h2 class="section-title" data-lang="about-title">Away from the crowds</h2>
@@ -238,7 +245,7 @@
                             allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Venera Massage Center Location">
+                            title="Map: Venera Body Care, Puljska cesta 49A, Galižana" data-lang-attr="title:map-title">
                         </iframe>
                     </div>
                 </div>
@@ -258,13 +265,13 @@
                 <li><a href="#about" data-lang="nav-about">About</a></li>
                 <li><a href="#location" data-lang="nav-location">Location</a></li>
             </ul>
-            <p class="footer-bottom">&copy; 2025 Venera Massage Center. <span data-lang="footer-rights">All rights reserved.</span></p>
+            <p class="footer-bottom">&copy; 2026 Venera Body Care. <span data-lang="footer-rights">All rights reserved.</span></p>
         </div>
     </footer>
 
     <!-- Floating contact (mobile) -->
     <div class="floating-contact">
-        <a href="tel:+385995929457" class="floating-btn floating-call" aria-label="Call +385 99 592 9457">
+        <a href="tel:+385995929457" class="floating-btn floating-call" aria-label="Call +385 99 592 9457" data-lang-attr="aria-label:call-aria">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
         </a>
         <a href="viber://chat?number=%2B385995929457" class="floating-btn floating-viber" aria-label="Viber">
