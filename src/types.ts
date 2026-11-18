@@ -33,25 +33,44 @@ export interface TranslationKeys {
     'nav-services': string;
     'nav-about': string;
     'nav-location': string;
+    // Hero
     'hero-title': string;
     'hero-subtitle': string;
     'hero-text': string;
     'hero-cta': string;
+    'book-cta': string;
+    'hours-short': string;
+    // Services
     'services-title': string;
     'services-subtitle': string;
-    'service-badge': string;
-    // Category titles
-    'category-classic-title': string;
-    'category-relax-title': string;
-    // Classic Massage services
-    'service-back': string;
-    'service-legs': string;
-    'service-hands': string;
-    'service-head-face': string;
-    'service-full-body': string;
-    // Relax Massage services
-    'service-relax-back': string;
-    'service-relax-full': string;
+    // Classic massage
+    'cat-classic': string;
+    'cat-classic-desc': string;
+    'svc-classic-full': string;
+    'svc-classic-back': string;
+    'svc-classic-legs': string;
+    // Relax massage
+    'cat-relax': string;
+    'cat-relax-desc': string;
+    'svc-relax-full': string;
+    // Energy massage
+    'cat-energy': string;
+    'cat-energy-desc': string;
+    'svc-reflex': string;
+    'svc-shiatsu': string;
+    // Sports program
+    'cat-sport': string;
+    'cat-sport-desc': string;
+    'svc-trigger': string;
+    'svc-stretch': string;
+    // Combinations
+    'cat-combo': string;
+    'cat-combo-desc': string;
+    'combo-relax-name': string;
+    'combo-relax-desc': string;
+    'combo-stress-name': string;
+    'combo-stress-desc': string;
+    // About
     'about-title': string;
     'about-text1': string;
     'about-text2': string;
@@ -62,15 +81,16 @@ export interface TranslationKeys {
     'feature2-desc': string;
     'feature3-title': string;
     'feature3-desc': string;
+    // Location
     'location-title': string;
     'location-subtitle': string;
     'address-label': string;
-    'phone-label': string;
-    'phone-order': string;
-    'contact-label': string;
-    'contact-desc': string;
     'hours-label': string;
     'hours-every-day': string;
+    'contact-label': string;
+    'contact-desc': string;
+    'directions-cta': string;
+    // Footer
     'footer-tagline': string;
     'footer-rights': string;
 }
